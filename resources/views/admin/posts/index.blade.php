@@ -21,8 +21,10 @@
                 <table class="table table-striped">
                     <thead>
                       <tr>
+                        <th scope="col">Id</th>
                         <th scope="col">Title</th>
                         <th scope="col">Slug</th>
+                        <th scope="col">Category</th>
                         <th scope="col">Actions</th>
                       </tr>
                     </thead>
@@ -32,6 +34,11 @@
                                 <td scope="row">{{ $post["id"] }}</td>
                                 <td>{{ $post["title"] }}</td>
                                 <td>{{ $post["slug"] }}</td>
+                                <td>
+                                    @if($post->category)
+                                        {{ $post->category->name }}
+                                    @endif
+                                </td>
                                 <td>
                                     <a href="{{ route("admin.posts.show", $post["slug"]) }}" class="btn btn-info">Dettagli</a>
                                     <a href="{{ route("admin.posts.edit", $post->id) }}" class="btn btn-warning">Modify</a>

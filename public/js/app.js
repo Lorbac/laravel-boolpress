@@ -37286,6 +37286,13 @@ deleteForm.forEach(function (item) {
     }
   });
 });
+var alertDiv = document.querySelectorAll(".alert");
+
+if (alertDiv[0]) {
+  setTimeout(function () {
+    alertDiv[0].remove();
+  }, 3000);
+}
 
 /***/ }),
 

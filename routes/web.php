@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Auth;
 // ROTTA  CHE GESTISCE LA HOMEPAGE VISIBILE AGLI UTENTI
 Route::get("/", "HomeController@index")->name("index");
 
+//ROTTA CHE GESTIRA' I POST PER L'UTENTE GENERICO
+
+Route::resource("/posts" , "PostController");
+
 // SERIE DI ROTTE CHE GESTISCONO TUTTO IL MECCANISMO DI AUTENTICAZIONE
 Auth::routes();
 
@@ -29,3 +33,6 @@ Route::middleware("auth")->prefix("admin")->namespace("Admin")->name("admin.")
 
         Route::resource("/posts", "PostController");
     });
+
+
+

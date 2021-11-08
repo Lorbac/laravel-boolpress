@@ -33,7 +33,7 @@
                             <td>{{ $post["title"] }}</td>
                             <td>{{ $post["slug"] }}</td>
                             <td>
-                                <a href="{{ route("posts.show", $post->id) }}" class="btn btn-info">Dettagli</a>
+                                <a href="{{ route("posts.show", $post->slug) }}" class="btn btn-info">Dettagli</a>
                                 </form>
                             </td>
                         </tr>

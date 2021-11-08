@@ -8,7 +8,7 @@ require('./bootstrap');
 //     }
 // }
 
-const deleteForm = document.querySelectorAll("delete-post");
+const deleteForm = document.querySelectorAll(".delete-post");
 
 deleteForm.forEach(item => {
     item.addEventListener("submit" , function(e) {

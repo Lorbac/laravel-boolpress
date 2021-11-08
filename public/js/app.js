@@ -37276,7 +37276,7 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js"); // window
 // }
 
 
-var deleteForm = document.querySelectorAll("delete-post");
+var deleteForm = document.querySelectorAll(".delete-post");
 deleteForm.forEach(function (item) {
   item.addEventListener("submit", function (e) {
     var resp = confirm("Vuoi cancellare?");

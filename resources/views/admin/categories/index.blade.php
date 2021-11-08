@@ -22,27 +22,22 @@
                     <thead>
                       <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Title</th>
+                        <th scope="col">Name</th>
                         <th scope="col">Slug</th>
-                        <th scope="col">Category</th>
                         <th scope="col">Actions</th>
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($posts as $post)
+                        @foreach ($categories as $category)
                             <tr>
-                                <td scope="row">{{ $post["id"] }}</td>
-                                <td>{{ $post["title"] }}</td>
-                                <td>{{ $post["slug"] }}</td>
+                                <td scope="row">{{ $category["id"] }}</td>
+                                <td>{{ $category["name"] }}</td>
+                                <td>{{ $category["slug"] }}</td>
+                                
                                 <td>
-                                    @if($post->category)
-                                        {{ $post->category->name }}
-                                    @endif
-                                </td>
-                                <td>
-                                    <a href="{{ route("admin.posts.show", $post["id"]) }}" class="btn btn-info">Dettagli</a>
-                                    <a href="{{ route("admin.posts.edit", $post->id) }}" class="btn btn-warning">Modify</a>
-                                    <form class="d-inline-block delete-post" method="post" action="{{ route("admin.posts.destroy", $post->id) }}">
+                                    <a href="{{ route("admin.categories.show", $category->id) }}" class="btn btn-info">Dettagli</a>
+                                    <a href="" class="btn btn-warning">Modify</a>
+                                    <form class="d-inline-block delete-category" method="category" action="">
                                         @csrf
                                         @method("DELETE")
                                         <button type="submit" class="btn btn-danger">Delete</button>

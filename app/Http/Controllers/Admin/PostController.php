@@ -79,12 +79,11 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Post $post
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show(Post $post)
     {
-        $post = Post::where("slug", $slug)->first();
         if(!$post) {
             abort(404);
         }

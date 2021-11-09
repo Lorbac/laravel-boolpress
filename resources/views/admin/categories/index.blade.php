@@ -35,7 +35,7 @@
                                 <td>{{ $category["slug"] }}</td>
                                 
                                 <td>
-                                    <a href="{{ route("admin.categories.show", $category->id) }}" class="btn btn-info">Dettagli</a>
+                                    <a href="{{ route("admin.categories.show", $category->id) }}" class="btn btn-info">Details</a>
                                     <a href="" class="btn btn-warning">Modify</a>
                                     <form class="d-inline-block delete-category" method="category" action="">
                                         @csrf

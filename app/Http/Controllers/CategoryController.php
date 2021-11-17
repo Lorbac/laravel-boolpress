@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Tag;
+use App\Category;
 
-class TagController extends Controller
+
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class TagController extends Controller
      */
     public function index()
     {
-        $tags = Tag::all();
-        return view("admin.tags.index", compact("tags"));
+        $categories = Category::all();
+        return view("guest.categories.index", compact("categories"));
     }
 
     /**
@@ -44,15 +44,15 @@ class TagController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Tag $tag
+     * @param  Category $category
      * @return \Illuminate\Http\Response
      */
-    public function show(Tag $tag)
+    public function show(Category $category)
     {
-        if(!$tag) {
+        if(!$category) {
             abort(404);
         }
-        return view("admin.tags.show", compact("tag"));
+        return view("guest.categories.show", compact("category"));
     }
 
     /**

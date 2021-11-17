@@ -27,3 +27,4 @@ if(alertDiv[0]) {
         alertDiv[0].remove()
     }, 3000);
 }
+

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Categories</h1>
+                <h1>Tags</h1>
                 @if(session("deleted"))
                     <div class="alert alert-danger">
                         {{ session("deleted") }}
@@ -28,16 +28,16 @@
                       </tr>
                     </thead>
                     <tbody>
-                        @foreach ($categories as $category)
+                        @foreach ($tags as $tag)
                             <tr>
-                                <td scope="row">{{ $category["id"] }}</td>
-                                <td>{{ $category["name"] }}</td>
-                                <td>{{ $category["slug"] }}</td>
+                                <td scope="row">{{ $tag["id"] }}</td>
+                                <td>{{ $tag["name"] }}</td>
+                                <td>{{ $tag["slug"] }}</td>
                                 
                                 <td>
-                                    <a href="{{ route("admin.categories.show", $category->id) }}" class="btn btn-info">Details</a>
+                                    <a href="{{ route("admin.tags.show", $tag->id) }}" class="btn btn-info">Details</a>
                                     <a href="" class="btn btn-warning">Modify</a>
-                                    <form class="d-inline-block delete-category" method="category" action="">
+                                    <form class="d-inline-block delete-tag" method="tag" action="">
                                         @csrf
                                         @method("DELETE")
                                         <button type="submit" class="btn btn-danger">Delete</button>

@@ -11,6 +11,8 @@
                     <div class="card-body">
                       <h5 class="card-title">{{ $post["title"] }}</h5>
                       <p class="card-text">{!! $post["content"] !!}</p>
+                      <small>Categoria di appartenenza: <a href="{{ route("categories.show", $post->category->id) }}">{{ $post->category->name }}</a></small><br/>
+                      <small>Tags: <a href=""><a></small>
                     </div>
                 </div>
             </div>

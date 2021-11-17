@@ -1,10 +1,10 @@
-@extends('layouts.dashboard')
+@extends('layouts.app')
 
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1>Categories</h1>
+                <h1>Posts</h1>
                 @if(session("deleted"))
                     <div class="alert alert-danger">
                         {{ session("deleted") }}
@@ -35,13 +35,7 @@
                                 <td>{{ $category["slug"] }}</td>
                                 
                                 <td>
-                                    <a href="{{ route("admin.categories.show", $category->id) }}" class="btn btn-info">Details</a>
-                                    <a href="" class="btn btn-warning">Modify</a>
-                                    <form class="d-inline-block delete-category" method="category" action="">
-                                        @csrf
-                                        @method("DELETE")
-                                        <button type="submit" class="btn btn-danger">Delete</button>
-                                    </form>
+                                    <a href="{{ route("categories.show", $category->id) }}" class="btn btn-info">Details</a>
                                 </td>
                             </tr>
                         @endforeach

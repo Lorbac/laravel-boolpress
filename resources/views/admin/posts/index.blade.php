@@ -40,7 +40,7 @@
                                     @endif
                                 </td>
                                 <td>
-                                    <a href="{{ route("admin.posts.show", $post["id"]) }}" class="btn btn-info">Dettagli</a>
+                                    <a href="{{ route("admin.posts.show", $post["id"]) }}" class="btn btn-info">Details</a>
                                     <a href="{{ route("admin.posts.edit", $post->id) }}" class="btn btn-warning">Modify</a>
                                     <form class="d-inline-block delete-post" method="post" action="{{ route("admin.posts.destroy", $post->id) }}">
                                         @csrf
